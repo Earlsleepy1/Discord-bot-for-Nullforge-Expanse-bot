@@ -1,0 +1,24 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "nullforge:gearhammer",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:durability": {
+        "max_durability": 1561
+      },
+      "minecraft:damage": 10,
+      "minecraft:enchantable": {
+        "value": 10
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "nullforge:shockwave"
+        }
+      },
+      "minecraft:knockback": 2
+    }
+  }
+}

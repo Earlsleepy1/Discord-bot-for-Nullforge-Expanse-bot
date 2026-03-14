@@ -1,0 +1,26 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "nullforge:chrono_bow",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:durability": {
+        "max_durability": 384
+      },
+      "minecraft:enchantable": {
+        "value": 1,
+        "slot": "bow"
+      },
+      "minecraft:weapon": {
+        "on_hit_block": {
+          "event": "nullforge:slow_target"
+        }
+      },
+      "minecraft:projectile": {
+        "projectile_entity": "minecraft:arrow"
+      }
+    }
+  }
+}

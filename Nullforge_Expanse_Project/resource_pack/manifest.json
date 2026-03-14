@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Nullforge Expanse Resource Pack",
+    "name": "Nullforge Expanse Resource",
+    "uuid": "90fd9529-9e52-407e-9b63-71b2aa9cd69a",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 16, 0]
+  },
+  "modules": [
+    {
+      "description": "Nullforge Expanse Resource Module",
+      "type": "resources",
+      "uuid": "4e8dad9a-4e57-4c4a-957e-6b88c391ec8a",
+      "version": [1, 0, 0]
+    }
+  ]
+}

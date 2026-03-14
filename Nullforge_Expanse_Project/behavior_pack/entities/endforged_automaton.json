@@ -1,0 +1,148 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nullforge:endforged_automaton",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["endforged_automaton", "monster"]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 2.0,
+        "height": 4.0
+      },
+      "minecraft:health": {
+        "value": 200,
+        "max": 200
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/endforged_automaton.json"
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "test": "has_damage",
+                  "value": "fatal"
+                }
+              ]
+            }
+          },
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "test": "health_percentage",
+                  "operator": "<=",
+                  "value": 66
+                }
+              ],
+              "event": "nullforge:enter_phase2"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "test": "health_percentage",
+                  "operator": "<=",
+                  "value": 33
+                }
+              ],
+              "event": "nullforge:enter_final_phase"
+            }
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 10
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "target": "player",
+        "within_radius": 30
+      },
+      "minecraft:behavior.melee_attack": {
+        "attack_types": "melee"
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    },
+    "component_groups": {
+      "nullforge:phase1": {
+        "minecraft:attack": {
+          "damage": 10
+        }
+      },
+      "nullforge:phase2": {
+        "minecraft:attack": {
+          "damage": 15
+        },
+        "minecraft:shooter": {
+          "type": "minecraft:small_fireball",
+          "def": "minecraft:small_fireball"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval_min": 2.0,
+          "attack_interval_max": 4.0,
+          "attack_radius": 20
+        }
+      },
+      "nullforge:final_phase": {
+        "minecraft:attack": {
+          "damage": 20
+        },
+        "minecraft:shooter": {
+          "type": "minecraft:small_fireball",
+          "def": "minecraft:small_fireball"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 2.0,
+          "attack_radius": 20
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": ["nullforge:phase1"]
+        }
+      },
+      "nullforge:enter_phase2": {
+        "remove": {
+          "component_groups": ["nullforge:phase1"]
+        },
+        "add": {
+          "component_groups": ["nullforge:phase2"]
+        }
+      },
+      "nullforge:enter_final_phase": {
+        "remove": {
+          "component_groups": ["nullforge:phase2"]
+        },
+        "add": {
+          "component_groups": ["nullforge:final_phase"]
+        }
+      }
+    }
+  }
+}

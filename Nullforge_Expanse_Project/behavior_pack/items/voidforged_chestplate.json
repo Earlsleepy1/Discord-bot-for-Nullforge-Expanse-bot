@@ -1,0 +1,24 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "nullforge:voidforged_chestplate",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:durability": {
+        "max_durability": 528
+      },
+      "minecraft:armor": {
+        "protection": 8
+      },
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "armor_torso"
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.chest"
+      }
+    }
+  }
+}

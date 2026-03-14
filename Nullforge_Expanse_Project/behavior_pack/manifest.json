@@ -1,0 +1,24 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Nullforge Expanse Behavior Pack",
+    "name": "Nullforge Expanse Behavior",
+    "uuid": "33604b5c-798b-4f67-b2ba-f7287c30eddb",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 16, 0]
+  },
+  "modules": [
+    {
+      "description": "Nullforge Expanse Behavior Module",
+      "type": "data",
+      "uuid": "af3f66c3-c666-4807-be31-c4b154e41a91",
+      "version": [1, 0, 0]
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "90fd9529-9e52-407e-9b63-71b2aa9cd69a",
+      "version": [1, 0, 0]
+    }
+  ]
+}

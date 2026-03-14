@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "nullforge:nullblade"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [
+      " S ",
+      " S ",
+      " C "
+    ],
+    "key": {
+      "S": {
+        "item": "nullforge:null_shard"
+      },
+      "C": {
+        "item": "nullforge:void_gear_core"
+      }
+    },
+    "result": {
+      "item": "nullforge:nullblade"
+    }
+  }
+}

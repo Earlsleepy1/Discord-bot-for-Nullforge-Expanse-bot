@@ -1,0 +1,70 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nullforge:void_sentry",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["void_sentry", "monster"]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 2.0
+      },
+      "minecraft:health": {
+        "value": 40,
+        "max": 40
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/void_sentry.json"
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "test": "has_damage",
+                  "value": "fatal"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:shooter": {
+        "type": "minecraft:small_fireball",
+        "def": "minecraft:small_fireball"
+      },
+      "minecraft:behavior.random_look_around": {},
+      "minecraft:behavior.nearest_attackable_target": {
+        "target": "player",
+        "within_radius": 20
+      },
+      "minecraft:behavior.ranged_attack": {
+        "attack_interval_min": 1.0,
+        "attack_interval_max": 3.0,
+        "attack_radius": 20
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      }
+    }
+  }
+}

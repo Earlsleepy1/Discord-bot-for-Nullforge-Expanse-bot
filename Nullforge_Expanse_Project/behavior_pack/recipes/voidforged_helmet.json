@@ -1,0 +1,21 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "nullforge:voidforged_helmet"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [
+      "PPP",
+      "P P"
+    ],
+    "key": {
+      "P": {
+        "item": "nullforge:automaton_plating"
+      }
+    },
+    "result": {
+      "item": "nullforge:voidforged_helmet"
+    }
+  }
+}

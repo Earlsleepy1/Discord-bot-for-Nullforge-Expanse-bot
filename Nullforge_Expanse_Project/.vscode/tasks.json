@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Package Nullforge Expanse Addon",
+      "type": "shell",
+      "command": "zip",
+      "args": [
+        "-r",
+        "Nullforge_Expanse.mcaddon",
+        "behavior_pack",
+        "resource_pack"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "format_version": "1.17.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "nullforge:nullforge_expanse"
+    },
+    "components": {
+      "minecraft:climate": {
+        "temperature": 0.0,
+        "downfall": 0.0
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "lowlands"
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 7,
+        "sea_floor_material": "minecraft:air",
+        "foundation_material": "minecraft:stone",
+        "mid_material": "minecraft:stone",
+        "top_material": "minecraft:stone"
+      },
+      "minecraft:monster_spawn_rules": {
+        "rules": [
+          {
+            "weight": 100,
+            "mob": "nullforge:scrapling",
+            "conditions": [
+              {
+                "minecraft:spawns_on_surface": {},
+                "minecraft:spawns_underground": {},
+                "minecraft:brightness_filter": {
+                  "min": 0,
+                  "max": 7
+                }
+              }
+            ]
+          },
+          {
+            "weight": 50,
+            "mob": "nullforge:chrono_stalker",
+            "conditions": [
+              {
+                "minecraft:spawns_on_surface": {},
+                "minecraft:brightness_filter": {
+                  "min": 0,
+                  "max": 7
+                }
+              }
+            ]
+          },
+          {
+            "weight": 25,
+            "mob": "nullforge:void_sentry",
+            "conditions": [
+              {
+                "minecraft:spawns_on_surface": {},
+                "minecraft:brightness_filter": {
+                  "min": 0,
+                  "max": 7
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

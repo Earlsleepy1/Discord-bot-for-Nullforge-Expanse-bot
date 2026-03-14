@@ -1,0 +1,104 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "nullforge:chrono_stalker",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": ["chrono_stalker", "monster"]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/chrono_stalker.json"
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": [
+                {
+                  "test": "has_damage",
+                  "value": "fatal"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 4
+      },
+      "minecraft:can_climb": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:conditional_bandwidth_optimization": {
+        "default_values": {
+          "max_optimized_distance": 80.0,
+          "max_dropped_ticks": 10,
+          "use_motion_prediction_hints": true
+        }
+      },
+      "minecraft:behavior.look_at_target": {},
+      "minecraft:behavior.random_look_around": {},
+      "minecraft:behavior.random_stroll": {},
+      "minecraft:behavior.nearest_attackable_target": {
+        "target": "player",
+        "within_radius": 16
+      },
+      "minecraft:behavior.melee_attack": {
+        "attack_types": "melee"
+      },
+      "minecraft:behavior.random_sitting": {
+        "min_sit_time": 20,
+        "max_sit_time": 40,
+        "probability": 0.1
+      }
+    },
+    "component_groups": {
+      "minecraft:staring": {
+        "minecraft:timer": {
+          "time": 5.0,
+          "time_down_event": {
+            "event": "nullforge:stop_staring"
+          }
+        },
+        "minecraft:behavior.look_at_target": {
+          "look_distance": 8
+        }
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {},
+      "nullforge:start_staring": {
+        "add": {
+          "component_groups": ["minecraft:staring"]
+        }
+      },
+      "nullforge:stop_staring": {
+        "remove": {
+          "component_groups": ["minecraft:staring"]
+        },
+        "set_property": {
+          "nullforge:slow_effect": false
+        }
+      }
+    }
+  }
+}

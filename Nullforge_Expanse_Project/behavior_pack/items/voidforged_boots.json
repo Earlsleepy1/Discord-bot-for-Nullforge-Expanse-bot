@@ -1,0 +1,24 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "nullforge:voidforged_boots",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:durability": {
+        "max_durability": 429
+      },
+      "minecraft:armor": {
+        "protection": 3
+      },
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "armor_feet"
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.feet"
+      }
+    }
+  }
+}

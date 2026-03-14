@@ -1,0 +1,46 @@
+{
+  "format_version": "1.14.0",
+  "sound_definitions": {
+    "nullforge.music.nullforge": {
+      "category": "music",
+      "sounds": [
+        {
+          "name": "sounds/music/nullforge/nullforge_music",
+          "stream": true
+        }
+      ]
+    },
+    "mob.scrapling.ambient": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/mob/scrapling/ambient"
+        }
+      ]
+    },
+    "mob.chrono_stalker.ambient": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/mob/chrono_stalker/ambient"
+        }
+      ]
+    },
+    "mob.void_sentry.ambient": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/mob/void_sentry/ambient"
+        }
+      ]
+    },
+    "mob.endforged_automaton.ambient": {
+      "category": "hostile",
+      "sounds": [
+        {
+          "name": "sounds/mob/endforged_automaton/ambient"
+        }
+      ]
+    }
+  }
+}

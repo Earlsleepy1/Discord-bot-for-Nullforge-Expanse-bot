@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "nullforge:voidforged_chestplate"
+    },
+    "tags": ["crafting_table"],
+    "pattern": [
+      "P P",
+      "PPP",
+      "PPP"
+    ],
+    "key": {
+      "P": {
+        "item": "nullforge:automaton_plating"
+      }
+    },
+    "result": {
+      "item": "nullforge:voidforged_chestplate"
+    }
+  }
+}
